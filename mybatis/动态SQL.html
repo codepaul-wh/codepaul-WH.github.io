@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>动态 SQL |  </title>
+    <meta name="description" content=" ">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="icon" href="/img/favicon.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.6d3e66e0.css" as="style"><link rel="preload" href="/assets/js/app.ab60294b.js" as="script"><link rel="preload" href="/assets/js/2.0769d472.js" as="script"><link rel="preload" href="/assets/js/46.d96aa487.js" as="script"><link rel="prefetch" href="/assets/js/10.d5b488e5.js"><link rel="prefetch" href="/assets/js/100.b05fe937.js"><link rel="prefetch" href="/assets/js/101.c78118ad.js"><link rel="prefetch" href="/assets/js/11.ba7209bc.js"><link rel="prefetch" href="/assets/js/12.7eb2b639.js"><link rel="prefetch" href="/assets/js/13.319a2e91.js"><link rel="prefetch" href="/assets/js/14.fe83290c.js"><link rel="prefetch" href="/assets/js/15.8a7ec64a.js"><link rel="prefetch" href="/assets/js/16.41f2dd98.js"><link rel="prefetch" href="/assets/js/17.904bc325.js"><link rel="prefetch" href="/assets/js/18.7a6246f7.js"><link rel="prefetch" href="/assets/js/19.84ab8dd3.js"><link rel="prefetch" href="/assets/js/20.04c09d1c.js"><link rel="prefetch" href="/assets/js/21.e75a2f46.js"><link rel="prefetch" href="/assets/js/22.a14b1840.js"><link rel="prefetch" href="/assets/js/23.799a37e9.js"><link rel="prefetch" href="/assets/js/24.c3eada22.js"><link rel="prefetch" href="/assets/js/25.4f11ed3d.js"><link rel="prefetch" href="/assets/js/26.375a9c03.js"><link rel="prefetch" href="/assets/js/27.bc7c4ae2.js"><link rel="prefetch" href="/assets/js/28.2250b95c.js"><link rel="prefetch" href="/assets/js/29.f568d59e.js"><link rel="prefetch" href="/assets/js/3.79868d1c.js"><link rel="prefetch" href="/assets/js/30.f7eb4129.js"><link rel="prefetch" href="/assets/js/31.94b316c6.js"><link rel="prefetch" href="/assets/js/32.428d0721.js"><link rel="prefetch" href="/assets/js/33.6064d0ca.js"><link rel="prefetch" href="/assets/js/34.711c8d67.js"><link rel="prefetch" href="/assets/js/35.2d341b53.js"><link rel="prefetch" href="/assets/js/36.d44bf3ce.js"><link rel="prefetch" href="/assets/js/37.b6844632.js"><link rel="prefetch" href="/assets/js/38.80d006c6.js"><link rel="prefetch" href="/assets/js/39.f7bee99d.js"><link rel="prefetch" href="/assets/js/4.973e9025.js"><link rel="prefetch" href="/assets/js/40.0239e47a.js"><link rel="prefetch" href="/assets/js/41.ae2fbfaa.js"><link rel="prefetch" href="/assets/js/42.dfd29a6a.js"><link rel="prefetch" href="/assets/js/43.683daf3c.js"><link rel="prefetch" href="/assets/js/44.562e4097.js"><link rel="prefetch" href="/assets/js/45.95b98fcb.js"><link rel="prefetch" href="/assets/js/47.2aca851e.js"><link rel="prefetch" href="/assets/js/48.814b9e24.js"><link rel="prefetch" href="/assets/js/49.fe2be804.js"><link rel="prefetch" href="/assets/js/5.336b97a1.js"><link rel="prefetch" href="/assets/js/50.c5a763c1.js"><link rel="prefetch" href="/assets/js/51.41e24a47.js"><link rel="prefetch" href="/assets/js/52.6c448e60.js"><link rel="prefetch" href="/assets/js/53.8c0b5684.js"><link rel="prefetch" href="/assets/js/54.8f76ab97.js"><link rel="prefetch" href="/assets/js/55.a15238f6.js"><link rel="prefetch" href="/assets/js/56.385a70ef.js"><link rel="prefetch" href="/assets/js/57.fe5f9465.js"><link rel="prefetch" href="/assets/js/58.348704b8.js"><link rel="prefetch" href="/assets/js/59.8074fc81.js"><link rel="prefetch" href="/assets/js/6.cdc6003c.js"><link rel="prefetch" href="/assets/js/60.1886e5a2.js"><link rel="prefetch" href="/assets/js/61.8cdce743.js"><link rel="prefetch" href="/assets/js/62.ccfad9c2.js"><link rel="prefetch" href="/assets/js/63.16b1771b.js"><link rel="prefetch" href="/assets/js/64.ab84024e.js"><link rel="prefetch" href="/assets/js/65.5d7c3b7a.js"><link rel="prefetch" href="/assets/js/66.d8591a18.js"><link rel="prefetch" href="/assets/js/67.73456f7e.js"><link rel="prefetch" href="/assets/js/68.f481f8f3.js"><link rel="prefetch" href="/assets/js/69.96f25530.js"><link rel="prefetch" href="/assets/js/7.46997b0a.js"><link rel="prefetch" href="/assets/js/70.0ab0d1fd.js"><link rel="prefetch" href="/assets/js/71.dd8facc4.js"><link rel="prefetch" href="/assets/js/72.ef52962d.js"><link rel="prefetch" href="/assets/js/73.0e844bfe.js"><link rel="prefetch" href="/assets/js/74.a3f222d9.js"><link rel="prefetch" href="/assets/js/75.cbbf1e57.js"><link rel="prefetch" href="/assets/js/76.79bfac66.js"><link rel="prefetch" href="/assets/js/77.536742b4.js"><link rel="prefetch" href="/assets/js/78.44d6cb00.js"><link rel="prefetch" href="/assets/js/79.2dc3f78e.js"><link rel="prefetch" href="/assets/js/8.2825b7c8.js"><link rel="prefetch" href="/assets/js/80.30f2b7e8.js"><link rel="prefetch" href="/assets/js/81.ce007e74.js"><link rel="prefetch" href="/assets/js/82.7f8e37af.js"><link rel="prefetch" href="/assets/js/83.201b9f31.js"><link rel="prefetch" href="/assets/js/84.8e750285.js"><link rel="prefetch" href="/assets/js/85.b564c207.js"><link rel="prefetch" href="/assets/js/86.85da9ef3.js"><link rel="prefetch" href="/assets/js/87.61865fb9.js"><link rel="prefetch" href="/assets/js/88.2c3e8d72.js"><link rel="prefetch" href="/assets/js/89.2b99140f.js"><link rel="prefetch" href="/assets/js/9.2a76fd8c.js"><link rel="prefetch" href="/assets/js/90.6ede089c.js"><link rel="prefetch" href="/assets/js/91.4f784eb3.js"><link rel="prefetch" href="/assets/js/92.503a04a8.js"><link rel="prefetch" href="/assets/js/93.668a1616.js"><link rel="prefetch" href="/assets/js/94.78890e02.js"><link rel="prefetch" href="/assets/js/95.4eafa307.js"><link rel="prefetch" href="/assets/js/96.8be342d2.js"><link rel="prefetch" href="/assets/js/97.cff73008.js"><link rel="prefetch" href="/assets/js/98.2d7c9205.js"><link rel="prefetch" href="/assets/js/99.4e9998dc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6d3e66e0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/favicon.png" alt=" " class="logo"> <span class="site-name can-hide"> </span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/disclaimer/" class="nav-link">
+  免责声明
+</a></div><div class="nav-item"><a href="https://github.com/codepaul-wh/ErrorDescription" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/disclaimer/" class="nav-link">
+  免责声明
+</a></div><div class="nav-item"><a href="https://github.com/codepaul-wh/ErrorDescription" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>MyBatis</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/mybatis/" class="sidebar-link">MyBatis简介</a></li><li><a href="/mybatis/入门.html" class="sidebar-link">入门</a></li><li><a href="/mybatis/XML配置.html" class="sidebar-link">配置</a></li><li><a href="/mybatis/XML映射文件.html" class="sidebar-link">XML 映射文件</a></li><li><a href="/mybatis/动态SQL.html" class="active sidebar-link">动态 SQL</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/mybatis/JavaAPI.html" class="sidebar-link">Java API</a></li><li><a href="/mybatis/SQL语句构建器类.html" class="sidebar-link">SQL语句构建器类</a></li><li><a href="/mybatis/日志.html" class="sidebar-link">日志</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="动态-sql"><a href="#动态-sql" class="header-anchor">#</a> 动态 SQL</h1> <p>MyBatis 的强大特性之一便是它的动态 SQL。如果你有使用 JDBC 或其它类似框架的经验，你就能体会到根据不同条件拼接 SQL 语句的痛苦。例如拼接时要确保不能忘记添加必要的空格，还要注意去掉列表最后一个列名的逗号。利用动态 SQL 这一特性可以彻底摆脱这种痛苦。</p> <p>虽然在以前使用动态 SQL 并非一件易事，但正是 MyBatis 提供了可以被用在任意 SQL 映射语句中的强大的动态 SQL 语言得以改进这种情形。</p> <p>动态 SQL 元素和 JSTL 或基于类似 XML 的文本处理器相似。在 MyBatis 之前的版本中，有很多元素需要花时间了解。MyBatis 3 大大精简了元素种类，现在只需学习原来一半的元素便可。MyBatis 采用功能强大的基于 OGNL 的表达式来淘汰其它大部分元素。</p> <ul><li>if</li> <li>choose (when, otherwise)</li> <li>trim (where, set)</li> <li>foreach</li></ul> <h3 id="if"><a href="#if" class="header-anchor">#</a> if</h3> <p>动态 SQL 通常要做的事情是根据条件包含 where 子句的一部分。比如：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;select id=&quot;findActiveBlogWithTitleLike&quot;
+     resultType=&quot;Blog&quot;&gt;
+  SELECT * FROM BLOG
+  WHERE state = ‘ACTIVE’
+  &lt;if test=&quot;title != null&quot;&gt;
+    AND title like #{title}
+  &lt;/if&gt;
+&lt;/select&gt;
+</code></pre></div><p>这条语句提供了一种可选的查找文本功能。如果没有传入“title”，那么所有处于“ACTIVE”状态的BLOG都会返回；反之若传入了“title”，那么就会对“title”一列进行模糊查找并返回 BLOG 结果（细心的读者可能会发现，“title”参数值是可以包含一些掩码或通配符的）。</p> <p>如果希望通过“title”和“author”两个参数进行可选搜索该怎么办呢？首先，改变语句的名称让它更具实际意义；然后只要加入另一个条件即可。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;select id=&quot;findActiveBlogLike&quot;
+     resultType=&quot;Blog&quot;&gt;
+  SELECT * FROM BLOG WHERE state = ‘ACTIVE’
+  &lt;if test=&quot;title != null&quot;&gt;
+    AND title like #{title}
+  &lt;/if&gt;
+  &lt;if test=&quot;author != null and author.name != null&quot;&gt;
+    AND author_name like #{author.name}
+  &lt;/if&gt;
+&lt;/select&gt;
+</code></pre></div><h3 id="choose-when-otherwise"><a href="#choose-when-otherwise" class="header-anchor">#</a> choose, when, otherwise</h3> <p>有时我们不想应用到所有的条件语句，而只想从中择其一项。针对这种情况，MyBatis 提供了 choose 元素，它有点像 Java 中的 switch 语句。</p> <p>还是上面的例子，但是这次变为提供了“title”就按“title”查找，提供了“author”就按“author”查找的情形，若两者都没有提供，就返回所有符合条件的 BLOG（实际情况可能是由管理员按一定策略选出 BLOG 列表，而不是返回大量无意义的随机结果）。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;select id=&quot;findActiveBlogLike&quot;
+     resultType=&quot;Blog&quot;&gt;
+  SELECT * FROM BLOG WHERE state = ‘ACTIVE’
+  &lt;choose&gt;
+    &lt;when test=&quot;title != null&quot;&gt;
+      AND title like #{title}
+    &lt;/when&gt;
+    &lt;when test=&quot;author != null and author.name != null&quot;&gt;
+      AND author_name like #{author.name}
+    &lt;/when&gt;
+    &lt;otherwise&gt;
+      AND featured = 1
+    &lt;/otherwise&gt;
+  &lt;/choose&gt;
+&lt;/select&gt;
+</code></pre></div><h3 id="trim-where-set"><a href="#trim-where-set" class="header-anchor">#</a> trim, where, set</h3> <p>前面几个例子已经合宜地解决了一个臭名昭著的动态 SQL 问题。现在回到“if”示例，这次我们将“ACTIVE = 1”也设置成动态的条件，看看会发生什么。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;select id=&quot;findActiveBlogLike&quot;
+     resultType=&quot;Blog&quot;&gt;
+  SELECT * FROM BLOG
+  WHERE
+  &lt;if test=&quot;state != null&quot;&gt;
+    state = #{state}
+  &lt;/if&gt;
+  &lt;if test=&quot;title != null&quot;&gt;
+    AND title like #{title}
+  &lt;/if&gt;
+  &lt;if test=&quot;author != null and author.name != null&quot;&gt;
+    AND author_name like #{author.name}
+  &lt;/if&gt;
+&lt;/select&gt;
+</code></pre></div><p>如果这些条件没有一个能匹配上会发生什么？最终这条 SQL 会变成这样：</p> <div class="language- extra-class"><pre class="language-text"><code>SELECT * FROM BLOG
+WHERE
+</code></pre></div><p>这会导致查询失败。如果仅仅第二个条件匹配又会怎样？这条 SQL 最终会是这样:</p> <div class="language- extra-class"><pre class="language-text"><code>SELECT * FROM BLOG
+WHERE
+AND title like ‘someTitle’
+</code></pre></div><p>这个查询也会失败。这个问题不能简单地用条件句式来解决，如果你也曾经被迫这样写过，那么你很可能从此以后都不会再写出这种语句了。</p> <p>MyBatis 有一个简单的处理，这在 90% 的情况下都会有用。而在不能使用的地方，你可以自定义处理方式来令其正常工作。一处简单的修改就能达到目的：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;select id=&quot;findActiveBlogLike&quot;
+     resultType=&quot;Blog&quot;&gt;
+  SELECT * FROM BLOG
+  &lt;where&gt;
+    &lt;if test=&quot;state != null&quot;&gt;
+         state = #{state}
+    &lt;/if&gt;
+    &lt;if test=&quot;title != null&quot;&gt;
+        AND title like #{title}
+    &lt;/if&gt;
+    &lt;if test=&quot;author != null and author.name != null&quot;&gt;
+        AND author_name like #{author.name}
+    &lt;/if&gt;
+  &lt;/where&gt;
+&lt;/select&gt;
+</code></pre></div><p><em>where</em> 元素只会在至少有一个子元素的条件返回 SQL 子句的情况下才去插入“WHERE”子句。而且，若语句的开头为“AND”或“OR”，<em>where</em> 元素也会将它们去除。</p> <p>如果 <em>where</em> 元素没有按正常套路出牌，我们可以通过自定义 trim 元素来定制 <em>where</em> 元素的功能。比如，和 <em>where</em> 元素等价的自定义 trim 元素为：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;trim prefix=&quot;WHERE&quot; prefixOverrides=&quot;AND |OR &quot;&gt;
+  ...
+&lt;/trim&gt;
+</code></pre></div><p><em>prefixOverrides</em> 属性会忽略通过管道分隔的文本序列（注意此例中的空格也是必要的）。它的作用是移除所有指定在 <em>prefixOverrides</em> 属性中的内容，并且插入 <em>prefix</em> 属性中指定的内容。</p> <p>类似的用于动态更新语句的解决方案叫做 <em>set</em>。<em>set</em> 元素可以用于动态包含需要更新的列，而舍去其它的。比如：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;update id=&quot;updateAuthorIfNecessary&quot;&gt;
+  update Author
+    &lt;set&gt;
+      &lt;if test=&quot;username != null&quot;&gt;username=#{username},&lt;/if&gt;
+      &lt;if test=&quot;password != null&quot;&gt;password=#{password},&lt;/if&gt;
+      &lt;if test=&quot;email != null&quot;&gt;email=#{email},&lt;/if&gt;
+      &lt;if test=&quot;bio != null&quot;&gt;bio=#{bio}&lt;/if&gt;
+    &lt;/set&gt;
+  where id=#{id}
+&lt;/update&gt;
+</code></pre></div><p>这里，<em>set</em> 元素会动态前置 SET 关键字，同时也会删掉无关的逗号，因为用了条件语句之后很可能就会在生成的 SQL 语句的后面留下这些逗号。（译者注：因为用的是“if”元素，若最后一个“if”没有匹配上而前面的匹配上，SQL 语句的最后就会有一个逗号遗留）</p> <p>若你对 <em>set</em> 元素等价的自定义 trim 元素的代码感兴趣，那这就是它的真面目：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;trim prefix=&quot;SET&quot; suffixOverrides=&quot;,&quot;&gt;
+  ...
+&lt;/trim&gt;
+</code></pre></div><p>注意这里我们删去的是后缀值，同时添加了前缀值。</p> <h3 id="foreach"><a href="#foreach" class="header-anchor">#</a> foreach</h3> <p>动态 SQL 的另外一个常用的操作需求是对一个集合进行遍历，通常是在构建 IN 条件语句的时候。比如：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;select id=&quot;selectPostIn&quot; resultType=&quot;domain.blog.Post&quot;&gt;
+  SELECT *
+  FROM POST P
+  WHERE ID in
+  &lt;foreach item=&quot;item&quot; index=&quot;index&quot; collection=&quot;list&quot;
+      open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+        #{item}
+  &lt;/foreach&gt;
+&lt;/select&gt;
+</code></pre></div><p><em>foreach</em> 元素的功能非常强大，它允许你指定一个集合，声明可以在元素体内使用的集合项（item）和索引（index）变量。它也允许你指定开头与结尾的字符串以及在迭代结果之间放置分隔符。这个元素是很智能的，因此它不会偶然地附加多余的分隔符。</p> <p><strong>注意</strong> 你可以将任何可迭代对象（如 List、Set 等）、Map 对象或者数组对象传递给 <em>foreach</em> 作为集合参数。当使用可迭代对象或者数组时，index 是当前迭代的次数，item 的值是本次迭代获取的元素。当使用 Map 对象（或者 Map.Entry 对象的集合）时，index 是键，item 是值。</p> <p>到此我们已经完成了涉及 XML 配置文件和 XML 映射文件的讨论。下一章将详细探讨 Java API，这样就能提高已创建的映射文件的利用效率。</p> <h3 id="script"><a href="#script" class="header-anchor">#</a> script</h3> <p>要在带注解的映射器接口类中使用动态 SQL，可以使用 <em>script</em> 元素。比如:</p> <div class="language- extra-class"><pre class="language-text"><code>    @Update({&quot;&lt;script&gt;&quot;,
+      &quot;update Author&quot;,
+      &quot;  &lt;set&gt;&quot;,
+      &quot;    &lt;if test='username != null'&gt;username=#{username},&lt;/if&gt;&quot;,
+      &quot;    &lt;if test='password != null'&gt;password=#{password},&lt;/if&gt;&quot;,
+      &quot;    &lt;if test='email != null'&gt;email=#{email},&lt;/if&gt;&quot;,
+      &quot;    &lt;if test='bio != null'&gt;bio=#{bio}&lt;/if&gt;&quot;,
+      &quot;  &lt;/set&gt;&quot;,
+      &quot;where id=#{id}&quot;,
+      &quot;&lt;/script&gt;&quot;})
+    void updateAuthorValues(Author author);
+</code></pre></div><h3 id="bind"><a href="#bind" class="header-anchor">#</a> bind</h3> <p><code>bind</code> 元素可以从 OGNL 表达式中创建一个变量并将其绑定到上下文。比如：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;select id=&quot;selectBlogsLike&quot; resultType=&quot;Blog&quot;&gt;
+  &lt;bind name=&quot;pattern&quot; value=&quot;'%' + _parameter.getTitle() + '%'&quot; /&gt;
+  SELECT * FROM BLOG
+  WHERE title LIKE #{pattern}
+&lt;/select&gt;
+</code></pre></div><h3 id="多数据库支持"><a href="#多数据库支持" class="header-anchor">#</a> 多数据库支持</h3> <p>一个配置了“_databaseId”变量的 databaseIdProvider 可用于动态代码中，这样就可以根据不同的数据库厂商构建特定的语句。比如下面的例子：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;insert id=&quot;insert&quot;&gt;
+  &lt;selectKey keyProperty=&quot;id&quot; resultType=&quot;int&quot; order=&quot;BEFORE&quot;&gt;
+    &lt;if test=&quot;_databaseId == 'oracle'&quot;&gt;
+      select seq_users.nextval from dual
+    &lt;/if&gt;
+    &lt;if test=&quot;_databaseId == 'db2'&quot;&gt;
+      select nextval for seq_users from sysibm.sysdummy1&quot;
+    &lt;/if&gt;
+  &lt;/selectKey&gt;
+  insert into users values (#{id}, #{name})
+&lt;/insert&gt;
+</code></pre></div><h3 id="动态-sql-中的可插拔脚本语言"><a href="#动态-sql-中的可插拔脚本语言" class="header-anchor">#</a> 动态 SQL 中的可插拔脚本语言</h3> <p>MyBatis 从 3.2 开始支持可插拔脚本语言，这允许你插入一种脚本语言驱动，并基于这种语言来编写动态 SQL 查询语句。</p> <p>可以通过实现以下接口来插入一种语言：</p> <div class="language- extra-class"><pre class="language-text"><code>public interface LanguageDriver {
+  ParameterHandler createParameterHandler(MappedStatement mappedStatement, Object parameterObject, BoundSql boundSql);
+  SqlSource createSqlSource(Configuration configuration, XNode script, Class&lt;?&gt; parameterType);
+  SqlSource createSqlSource(Configuration configuration, String script, Class&lt;?&gt; parameterType);
+}
+</code></pre></div><p>一旦设定了自定义语言驱动，你就可以在 mybatis-config.xml 文件中将它设置为默认语言：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;typeAliases&gt;
+  &lt;typeAlias type=&quot;org.sample.MyLanguageDriver&quot; alias=&quot;myLanguage&quot;/&gt;
+&lt;/typeAliases&gt;
+&lt;settings&gt;
+  &lt;setting name=&quot;defaultScriptingLanguage&quot; value=&quot;myLanguage&quot;/&gt;
+&lt;/settings&gt;
+</code></pre></div><p>除了设置默认语言，你也可以针对特殊的语句指定特定语言，可以通过如下的 <code>lang</code> 属性来完成：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;select id=&quot;selectBlog&quot; lang=&quot;myLanguage&quot;&gt;
+  SELECT * FROM BLOG
+&lt;/select&gt;
+</code></pre></div><p>或者，如果你使用的是映射器接口类，在抽象方法上加上 <code>@Lang</code> 注解即可：</p> <div class="language- extra-class"><pre class="language-text"><code>public interface Mapper {
+  @Lang(MyLanguageDriver.class)
+  @Select(&quot;SELECT * FROM BLOG&quot;)
+  List&lt;Blog&gt; selectBlog();
+}
+</code></pre></div><p><strong>注意</strong> 可以将 Apache Velocity 作为动态语言来使用，更多细节请参考 MyBatis-Velocity 项目。</p> <p>你前面看到的所有 xml 标签都是由默认 MyBatis 语言提供的，而它由别名为 <code>xml</code> 的语言驱动器 <code>org.apache.ibatis.scripting.xmltags.XmlLanguageDriver</code> 所提供。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/mybatis/XML映射文件.html" class="prev">
+        XML 映射文件
+      </a></span> <span class="next"><a href="/mybatis/JavaAPI.html">
+        Java API
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.ab60294b.js" defer></script><script src="/assets/js/2.0769d472.js" defer></script><script src="/assets/js/46.d96aa487.js" defer></script>
+  </body>
+</html>
